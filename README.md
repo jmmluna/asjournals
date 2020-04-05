@@ -14,7 +14,7 @@
 - Descarga de todas las tablas a un único fichero excel.
 
 ## Requerimientos
-Para comenzar a desarrollar sobre el proyecto, necesitarÃ¡ tener Node.js instalado en su entorno. Para **SPA_multi_web** se han utilizado las siguientes versiones: 
+Para comenzar a desarrollar sobre el proyecto, necesitará tener Node.js instalado en su entorno. Para **asjournals** se han utilizado las siguientes versiones: 
 
     $ node --version
     v12.16.1
