@@ -1,1 +1,1 @@
-import './AddXLSXTool';
+import './AddXlsxTool';

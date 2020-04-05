@@ -3,7 +3,7 @@ import { Article } from './Article';
 import { FrequencyTableGenerator } from './FrequencyTableGenerator';
 import HtmlToXlsxCreator from './HtmlToXlsxCreator';
 
-class AddXLSXTool {
+class AddXlsxTool {
     constructor() {
         document.getElementById('imputFile').onchange = (evt) => {
             const loader = document.getElementById('loader');
@@ -106,4 +106,4 @@ class AddXLSXTool {
     }
 }
 
-export default new AddXLSXTool();
+export default new AddXlsxTool();

@@ -8,7 +8,13 @@
         "start": "parcel -p 9000 ./src/index.html --no-cache",
         "build": "parcel build src/index.html --public-url ./ --no-cache --no-source-maps"
     },
-    "keywords": ["excel", "json", "frecuencias", "análisis", "datos"],
+    "keywords": [
+        "excel",
+        "json",
+        "frecuencias",
+        "análisis",
+        "datos"
+    ],
     "author": {
         "name": "José María Martínez Luna",
         "email": "jmmluna@gmail.com"
