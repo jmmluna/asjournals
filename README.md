@@ -1,11 +1,10 @@
 # asjournals
 
-## Utilidad para web análisis de revistas científicas
+## Utilidad web para análisis de revistas científicas
 
-![](screenshot.png)
+![Screenshot](https://github.com/jmmluna/asjournals/blob/master/screenshot.png)
 
-
-Es un proyecto NodeJS cuyo objetivo es generar tablas de frecuencias a partir de un fichero de entrada en formato Excel. El fichero de entrada debe cumplir con un formato específico definido para la toma de datos. La herramienta se centra principalmente en el tratamiento de las columnas que contienen datos separados por ';'.
+**asjournals** es un proyecto NodeJS cuyo objetivo es generar tablas de frecuencias a partir de un fichero de entrada en formato Excel. El fichero de entrada debe cumplir con un formato específico definido para la toma de datos. La herramienta se centra principalmente en el tratamiento de las columnas que contienen datos separados por ';'.
 
 ## Características principales
 
