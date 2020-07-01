@@ -49,10 +49,8 @@ export class Article {
     }
 
     setDescriptors(descriptors) {
-        if (descriptors === undefined)
-            this._descriptors = [];
-        else
-            this._descriptors = descriptors.split(";");
+        if (descriptors === undefined) this._descriptors = [];
+        else this._descriptors = descriptors.split(";");
     }
 
     getDescriptors() {
@@ -60,10 +58,8 @@ export class Article {
     }
 
     setAuthors(authors) {
-        if (authors === undefined)
-            this._authors = [];
-        else
-            this._authors = authors.split(";");
+        if (authors === undefined) this._authors = [];
+        else this._authors = authors.split(";");
     }
 
     getAuthors() {
@@ -71,10 +67,8 @@ export class Article {
     }
 
     setCitedAuthors(citedAuthors) {
-        if (citedAuthors === undefined)
-            this._citedAuthors = [];
-        else
-            this._citedAuthors = citedAuthors.split(";");
+        if (citedAuthors === undefined) this._citedAuthors = [];
+        else this._citedAuthors = citedAuthors.split(";");
     }
 
     getCitedAuthors() {
@@ -82,10 +76,8 @@ export class Article {
     }
 
     setCitedJournals(journals) {
-        if (journals === undefined)
-            this._journals = [];
-        else
-            this._journals = journals.split(";");
+        if (journals === undefined) this._journals = [];
+        else this._journals = journals.split(";");
     }
 
     getCitedJournals() {
@@ -93,10 +85,8 @@ export class Article {
     }
 
     setInstitutions(institutions) {
-        if (institutions === undefined)
-            this._institutions = [];
-        else
-            this._institutions = institutions.split(";");
+        if (institutions === undefined) this._institutions = [];
+        else this._institutions = institutions.split(";");
     }
 
     getInstitutions() {
@@ -106,16 +96,72 @@ export class Article {
     getDescriptorsCalulate(field) {
         let descriptors = [];
         if (field !== undefined) {
-
             let words = field.split(" ");
-            let removedToWords = ["del", "y", "de", "para", "en", "la", "el", "una", "que", "las", "con",
-                "es", ".", "", "a", "su", "sus", "como", "cómo", "Los", "han", "uno", "otro", "sin", "estos", "los",
-                "no", "No", "se", "ante", "o", "pero", "sí", "dar", "por", "entre", "al", "Este"
-            ]
+            let removedToWords = [
+                "del",
+                "y",
+                "de",
+                "para",
+                "en",
+                "la",
+                "el",
+                "lo",
+                "la",
+                "una",
+                "que",
+                "las",
+                "con",
+                "es",
+                ".",
+                "",
+                "a",
+                "su",
+                "sus",
+                "Sus",
+                "como",
+                "cómo",
+                "Los",
+                "han",
+                "uno",
+                "otro",
+                "estos",
+                "los",
+                "no",
+                "No",
+                "se",
+                "ante",
+                "o",
+                "pero",
+                "sí",
+                "dar",
+                "por",
+                "entre",
+                "al",
+                "Al",
+                "Este",
+                "Cómo",
+                "Contra",
+                "De",
+                "Del",
+                "Dentro",
+                "Desde",
+                "e",
+                "E",
+                "El",
+                "La",
+                "Las",
+                "Lo",
+                "Más",
+                "mas",
+                "más",
+                "Sin",
+                "sin",
+                "Son",
+                "son",
+            ];
             words.forEach((word) => {
-                if (!removedToWords.includes(word))
-                    descriptors.push(word.trim());
-            })
+                if (!removedToWords.includes(word)) descriptors.push(word.trim());
+            });
         }
         return descriptors;
     }
