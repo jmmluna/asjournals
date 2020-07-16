@@ -15,26 +15,56 @@ class AddXlsxTool {
 
             xlsxParser.onFileSelection(files[0]).then((data) => {
                 loader.style.display = "none";
-
+                // alert(JSON.stringify(data));
                 this._articles = {};
-                data["Datos Identificativos"].forEach((id) => {
+
+                const hoja1 = data["Hoja 1"];
+
+                // if(hoja1) {
+
+                // }
+                // else {
+                let sheet = data["Datos Identificativos"];
+                sheet = sheet ? sheet : [];
+                sheet.forEach((id) => {
                     this._articles[id["Control"]] = new Article(id);
                 });
 
-                data["Análisis Conceptual"].forEach((id) => {
-                    this._articles[id["Control"]].setTitle(id["Título"]);
-                    this._articles[id["Control"]].setSummary(id["Resumen "]);
-                    this._articles[id["Control"]].setDescriptors(id["Descriptores"]);
+                sheet = data["Análisis Conceptual"];
+                sheet = sheet ? sheet : [];
+                let cont = 0;
+                sheet.forEach((id) => {
+                    const controlId = id["Control"];
+                    if (controlId) {
+                        this._articles[controlId].setTitle(id["Título"]);
+                        this._articles[controlId].setSummary(id["Resumen "]);
+                        this._articles[controlId].setDescriptors(id["Descriptores"]);
+                    } else cont++;
                 });
 
-                data["Análisis cienciométrico"].forEach((id) => {
-                    this._articles[id["Control"]].setInstitutions(id["Institución"]);
-                    this._articles[id["Control"]].setAuthors(id["Autores"]);
-                    this._articles[id["Control"]].setCitedAuthors(id["Autores citados"]);
-                    this._articles[id["Control"]].setCitedJournals(
-                        id["Revistas citadas"]
+                if (cont > 0)
+                    alert(
+                        "Se han detectado Id Control no definidos en Análisis Conceptual"
                     );
+
+                sheet = data["Análisis cienciométrico"];
+                sheet = sheet ? sheet : [];
+                cont = 0;
+                sheet.forEach((id) => {
+                    const controlId = id["Control"];
+                    if (controlId) {
+                        this._articles[controlId].setInstitutions(id["Institución"]);
+                        this._articles[controlId].setAuthors(id["Autores"]);
+                        this._articles[controlId].setCitedAuthors(id["Autores citados"]);
+                        this._articles[controlId].setCitedJournals(id["Revistas citadas"]);
+                    } else cont++;
                 });
+
+                if (cont > 0)
+                    alert(
+                        "Se han detectado Id Control no definidos en Análisis cienciométrico"
+                    );
+                // }
 
                 this.show();
             });

@@ -117,6 +117,7 @@ export class FrequencyTableGenerator {
     }
 
     addElements(descriptors, year, isDescriptor) {
+        descriptors = descriptors ? descriptors : [];
         descriptors.forEach((descriptor) => {
             descriptor = descriptor.trim();
             if (descriptor.length === 0) return;
